@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Demo Blanchi - Tintoreria a tu puerta</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/one-page-wonder.css' %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}">Demo Blanchi</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#about">Acerca</a>
+                    </li>
+                    <li>
+                        <a href="#services">Servicios</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contacto</a>
+                    </li>
+                    <li></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{% url 'signin' %}">Inicia Sesión</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-default navbar-btn">Resgistrate</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <img src="http://blanchi.com.mx/img/content/logo.png">
+                <h2>¿Tienes ropa sucia?</h2>
+                <a type="button" class="btn btn-default btn-lg" href="{% url 'pedidos' %}">Click para Lavar</a>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="{%static 'img/location.png'%}">
+            <h2 class="featurette-heading">Vamos por tu ropa.
+                <span class="text-muted">Dinos cuando y donde.</span>
+            </h2>
+            <p class="lead">Desde donde estes sólo indicanos a través del mapa donde quieres que vayamos por tu ropa. Un miembro del equipo llegará por tu ropa
+            en tiempo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="{%static 'img/clock.png'%}">
+            <h2 class="featurette-heading">Hacemos la magia.
+                <span class="text-muted">Tu ropa esta en buenas manos.</span>
+            </h2>
+            <p class="lead">Nos encargamos de brindarte un servicio de calidad para que tu no tengas que preocuparte por nada y puedas seguir con tus labores diarias.
+            Puedes estar seguro que en unas horas tu ropa estará como la deseas y en donde la deaseas.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="{%static 'img/Retina-Ready.png'%}">
+            <h2 class="featurette-heading">Directo en tus manos.
+                <span class="text-muted">Llevamos de vuelta tu ropa donde quiera que estes.</span>
+            </h2>
+            <p class="lead">Donde quiera que estes un miembro de nuestro equipo llevará tu ropa ya lista y cuidada. Ahora solo te toca disfrutar!.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Blanchi 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Lavamos tu ropa</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre", placeholder="Francisco Perez"/>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="alguien@email.com">
+              </div>
+              <div class="form-group">
+                  <label for="nombre">Telefono</label>
+                  <input type="text" class="form-control" id="nombre", placeholder="55 55 55 55 55"/>
+              </div>
+              <div class="form-group">
+                  <label for="nombre">Cupón</label>
+                  <input type="text" class="form-control" id="nombre", placeholder="ASDFG"/>
+              </div>
+            </form>
+              </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
